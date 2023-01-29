@@ -1,0 +1,73 @@
+---
+import Project from "./interface/Project.astro";
+
+---
+
+<div id="work" class="work">
+    <h2 class="header">
+        My Work
+    </h2>
+
+    <div class="row">
+        <Project
+            title="Ethereum Classic Address API"
+            img="project-etc.png"
+            alt="Ethereum Classic Address Generator API"
+            url="https://github.com/dox-dev/etc-address-api"
+        />
+        
+        <Project
+            title="Fisherman - Temporary Express.js Server"
+            img="project-fisherman.png"
+            alt="Fisherman - Temporary Express.js Server"
+            url="https://github.com/dox-dev/fisherman"
+        />
+    </div>
+
+    <div class="row">
+        <Project
+            title="Nike Air Vapormax Landing Page"
+            img="project-nike.png"
+            alt="Nike Air Vapormax Landing Page Concept"
+            url="https://nikeshowcase.github.io"
+        />
+        
+        <Project
+            title="Bitswipe Crypto Processor Landing Page"
+            img="project-bitswipe.png"
+            alt="Bitswipe Crypto Processor Landing Page Concept"
+            url="https://bitswipeorg.github.io"
+        />
+    </div>
+</div>
+
+<style>
+    .work {
+        display: grid;
+        place-items: center;
+        margin: 7.5rem 0;
+    }
+    .header {
+        font-size: 3rem;
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-decoration-thickness: 2.5px;
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .header {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+        .row {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+</style>

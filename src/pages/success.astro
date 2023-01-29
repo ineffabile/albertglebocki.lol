@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Thanks for contacting me!</title>
+		<style>
+	        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600');
+            :root {
+                --dark: #161616;
+                --light: #FFFDFA;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: var(--dark);
+                color: var(--light);
+                font-family: 'Poppins', sans-serif;
+                line-height: 1.5;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            a {
+                background-color: var(--light);
+                color: var(--dark);
+                text-decoration: none;
+                border-radius: 15px;
+                padding: .5rem 1.25rem;
+                font-weight: 600;
+		        font-family: 'Poppins', sans-serif;
+                font-size: 1rem;
+                transition: 420ms ease-in-out;
+            }
+
+            a:hover {
+                transform: scale(1.05);
+            }
+
+            h1 {
+                font-weight: 400;
+                margin-top: 1rem;
+                margin-bottom: 0;
+                font-size: 2rem;
+            }
+
+            span {
+                font-weight: 300;
+                margin-bottom: 1.5rem;
+                font-size: 1rem;
+                opacity: .75;
+            }
+
+			.center {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				width: 100vw;
+			}
+
+            @media screen and (max-width: 1000px) {
+                h1 {
+                    font-size: 3.5rem;
+                }
+                span {
+                    font-size: 2rem;
+                    margin-bottom: 3.5rem;
+                }
+                a {
+                    font-size: 2.5rem;
+                }
+            }
+		</style>
+	</head>
+	<body>
+		<main class="center">
+                <img
+                    src="favicon.svg"
+                    width="72px"
+                    height="72px"
+                    alt="Logo"
+                />
+
+                <h1>Thanks for reaching out!</h1>
+                <span>I'll reply as soon as possible</span>
+
+				<a href="/">Go Back</a>
+			</main>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+---
+const {title, img, alt, url, color} = Astro.props;
+---
+
+<a class="project" href={url} target="_blank">
+    <img
+        src={img}
+        width="384px"
+        height="256px"
+        alt={alt}
+        class="image"
+    />
+    <h3 id="title" class="title">{title}</h3>
+</a>
+
+<style>
+    .project {
+        display: grid;
+        place-items: center;
+        transition: .5s;
+    }
+    .project:hover {
+        transform: scale(1.05);
+    }
+    .image {
+        margin-bottom: 0;
+    }
+    .title {
+        font-size: .85rem;
+        color: var(--dark);
+        margin-top: 0;
+        transform: translateY(-2rem);
+        opacity: .8;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .project {
+            transform: scale(.85);
+            margin-bottom: -3rem;
+        }
+        .project:hover {
+            transform: scale(.9);
+        }
+        .title {
+            font-size: .95rem;
+            transform: translateY(-2.5rem);
+        }
+    }
+</style>

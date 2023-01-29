@@ -1,0 +1,65 @@
+<div class="navbar">
+    <span class="logo">
+        albertglebocki.
+    </span>
+
+    <span class="logo small">
+        a.
+    </span>
+
+    <div class="menu">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<style>
+    .navbar {
+        top: 0;
+        padding: 1.75rem 5rem;
+        position: sticky;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--clear-dark);
+        z-index: 5;
+    }
+    .logo {
+        font-weight: 800;
+        font-size: 1.15rem;
+        animation: fadeUp 1.25s ease-in-out forwards;
+    }
+    .small {
+        font-size: 1.65rem;
+        display: none;
+    }
+    .menu {
+        display: flex;
+        gap: 1.25rem;
+        animation: fadeUp 1.25s ease-in-out forwards;
+    }
+    .menu > a {
+        transition: .5s;
+    }
+    .menu > a:hover {
+        transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 1000px) {
+        .navbar {
+            padding: 1.75rem 2.5rem;
+        }
+        .logo {
+            display: none;
+        }
+        .small {
+            display: block;
+        }
+        .menu {
+            gap: 1rem;
+        }
+    }
+</style>

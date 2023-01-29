@@ -1,0 +1,211 @@
+---
+import About from "../components/About.astro";
+import Home from "../components/Home.astro";
+import Navbar from "../components/Navbar.astro";
+import Skills from "../components/Skills.astro";
+import Work from "../components/Work.astro";
+import Contact from "../components/Contact.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="keywords" content="Albert Glebocki, Albert Głębocki, Albert Glebocki Dev, Dox Dev, Dox Developer, dox dev, doxdeveloper, albert dox, dox glebocki, albert glebocki" />
+		<meta name="description" content="Creative Development For Creative World." />
+		<meta property="og:description" content="Creative Development For Creative World." />
+		<meta property="og:image" content="/og-image.jpg" />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="1080" />
+		<meta property="og:image:height" content="810" />
+		<meta property="og:image:alt" content="Albert Glebocki // Creative Development For Creative World." />
+		<meta property="og:site_name" content="Albert Glebocki" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="canonical" href="https://dox-dev.github.io/" />
+		<title>Albert Glebocki</title>
+	</head>
+	<body>
+		<div class="inverted-cursor"></div>
+
+		<a href="#" class="scroll-to-top" aria-label="Scroll To Top Button">
+			<svg viewBox="0 0 100 100" width="100" height="100">
+				<defs>
+					<path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+				</defs>
+				<text fill="var(--light)" font-size="19" class="ring">
+					<textPath xlink:href="#circle">SCROLL ME BACK TO TOP.</textPath>
+				</text>
+				<text fill="var(--light)" x="50%" y="50%" font-size="26" dominant-baseline="middle" text-anchor="middle">&#8593;</text>
+			</svg>
+		</a>
+
+		<Navbar/>
+		<Home/>
+		<About/>
+		<Work/>
+		<Skills/>
+		<Contact/>
+	</body>
+</html>
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap');
+	:root {
+		--dark: #161616;
+		--light: #FFFDFA;
+		--clear-dark: #161616d9;
+	}
+	::-moz-selection {
+		color: var(--dark);
+		background: var(--light);
+	}
+
+	::selection {
+		color: var(--dark);
+		background: var(--light);
+	}
+	::-webkit-scrollbar {
+		display: none;
+	}
+	html {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		scroll-behavior: smooth;
+	}
+	body {
+		background-color: var(--dark);
+		color: var(--light);
+		font-family: 'Poppins', sans-serif;
+		margin: 0 10rem;
+		overflow-x: hidden;
+	}
+	a {
+		text-decoration: none;
+		color: var(--light);
+	}
+	.scroll-to-top {
+		position: fixed;
+		right: 10rem;
+		bottom: 2.5rem;
+		opacity: 0;
+		pointer-events: none;
+		transition: .9s all;
+		z-index: 5;
+	}
+	.active {
+		pointer-events: auto;
+		opacity: 1;
+	}
+	.ring {
+		transform-origin: center;
+		animation: rotating 15s linear infinite;
+		font-family: 'El Messiri', sans-serif;
+	}
+	@keyframes rotating {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		body {
+			margin: 0;
+		}
+		.scroll-to-top {
+			right: 1rem;
+			bottom: 1rem;
+			transform: scale(.75);
+			mix-blend-mode: difference;
+		}
+	}
+	@media only screen and (min-width: 1367px) {
+		html {
+			cursor:none;
+		}
+		.inverted-cursor {
+			z-index: 10;
+			pointer-events: none;
+			width: 5rem;
+			height: 5rem;
+			will-change: transform;
+			background: var(--light);
+			position: absolute;
+			mix-blend-mode: difference;
+			border-radius: 50%;
+			animation: grow-shrink 4s infinite alternate ease-in-out;
+		}
+
+		@keyframes grow-shrink {
+			0% {
+				transform: scale(1);
+			}
+			25% {
+				transform: scale(.95);
+			}
+			50% {
+				transform: scale(1);
+			}
+			75% {
+				transform: scale(.95);
+			}
+			100% {
+				transform: scale(1);
+			}
+		}
+	}
+
+	@keyframes fadeUp {
+		from {
+			transform: translateY(1.75rem);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+	@keyframes fadeDown {
+		from {
+			transform: translateY(-1.75rem);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+	@keyframes fadeIn {
+		from {
+			transform: scale(.9);
+			opacity: 0;
+		}
+		to {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+</style>
+
+<script lang="ts">
+	const invertedCursor = document.querySelector(".inverted-cursor");
+	const cursorWidth = invertedCursor.offsetWidth / 2;
+	const scrollToTop = document.querySelector(".scroll-to-top");
+	const windowOffset = window.innerHeight * .65;
+
+	document.addEventListener("mousemove", event => {
+		invertedCursor.style.left = event.pageX - cursorWidth + "px";
+		invertedCursor.style.top = event.pageY - cursorWidth + "px";
+	});
+
+	window.addEventListener("scroll", () => {
+		if (window.pageYOffset > windowOffset) {
+			scrollToTop.classList.add("active");
+		} else {
+			scrollToTop.classList.remove("active");
+		}
+	});
+</script>

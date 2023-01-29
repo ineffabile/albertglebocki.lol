@@ -1,0 +1,95 @@
+<div class="home">
+    <div class="column">
+        <div class="wrapper">
+            <h1 class="big">
+                Creative<br/>
+                Development
+            </h1>
+
+            <span class="small">
+                For Creative World.
+            </span>
+
+            <i class="arrow"></i>
+        </div>
+    </div>
+    
+    <img
+        src="home-image.webp"
+        width="272"
+        height="512px"
+        alt="Home Image"
+        class="image"
+        draggable="false"
+    />
+</div>
+
+<style>
+    .home {
+        width: calc(100% - 10rem);
+        height: calc(100vh - 83px);
+        padding: 0 5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 512px;
+        animation: fadeUp 1.25s ease-in-out forwards;
+    }
+    .big {
+        font-size: 6.75rem;
+        font-weight: 500;
+        line-height: 5.75rem;
+        letter-spacing: -.25rem;
+        text-transform: uppercase;
+        margin-bottom: .25rem;
+    }
+    .small {
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        opacity: .5;
+        transform: translateX(5px);
+    }
+    .arrow {
+        align-self: flex-end;
+        border: solid var(--light);
+        border-width: 0 10px 10px 0;
+        display: inline-block;
+        padding: 2.5rem;
+    }
+    .image {
+        background-color: var(--light);
+        border-top-right-radius: 5rem;
+        border-bottom-left-radius: 5rem;
+        border: 10px solid var(--light);
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .home {
+            padding: 5rem 2.5rem 0 2.5rem;
+            width: calc(100% - 5rem);
+            height: 26rem;
+            justify-self: center;
+        }
+        .big {
+            font-size: 3.25rem;
+            line-height: 3.25rem;
+        }
+        .small {
+            font-size: 1rem;
+        }
+        .arrow {
+            border-width: 0 6px 6px 0;
+            padding: 1.75rem;
+        }
+        .image {
+            display: none;
+        }
+    }
+</style>
